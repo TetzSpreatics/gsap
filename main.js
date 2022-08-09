@@ -33,7 +33,7 @@ const slide3 = gsap.timeline();
 ScrollTrigger.create({
     animation: slide3,
     trigger: ".slide3",
-    start: "top top",
+    start: "20% top",
     end: "+=5000",
     pin: true,
     scrub: 2,
@@ -45,7 +45,11 @@ slide3.to(".s3-slogan1", {
     opacity: 1,
     scale: 0.5,
 }).to(".s3-slogan2", {
-    rotation: 180,
+    rotation: 360,
+    scale: 0.5,
+    opacity: 1,
+}).to(".s3-slogan3", {
+    scale: 0.5,
     opacity: 1,
 }).to(".s3-slogan1", {
     x: 1000,
@@ -54,6 +58,8 @@ slide3.to(".s3-slogan1", {
     x: -1000,
     opacity: 0,
 }, "<").to(".s3-slogan2", {
+    opacity: 0,
+}).to(".s3-slogan3", {
     opacity: 0,
 });
 
@@ -79,7 +85,13 @@ slide4.to(".tree-left", {
 }).to(".tree-right", {
     x: 500,
     scale: 1.3,
+}, "<").to(".beach", {
+    scale: 0.7,
+}, "<").from(".text", {
+    scale: 2,
+    y: -300,
 }, "<");
+
 
 const slide5 = gsap.timeline();
 
@@ -94,6 +106,9 @@ ScrollTrigger.create({
 })
 
 slide5.from(".s5-slogan1", {
+    scale: 4,
+    opacity: 0,
+}).to(".s5-slogan1", {
     scale: 4,
     opacity: 0,
 });
